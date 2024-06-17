@@ -1,0 +1,52 @@
+phatnguyen@Phats-MacBook-Pro todo-backend % docker exec -it todo-backend-mongo-1 bash       
+root@927471d044ac:/# mongosh -u root -p example
+Current Mongosh Log ID: 667000237705b3e0668db5fa
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.2.6
+Using MongoDB:          7.0.11
+Using Mongosh:          2.2.6
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2024-06-17T06:57:54.274+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never' in this binary version
+   2024-06-17T06:57:54.274+00:00: vm.max_map_count is too low
+------
+
+test> show dbs
+admin         100.00 KiB
+config         72.00 KiB
+local          72.00 KiB
+the_database   40.00 KiB
+test> 
+
+test> use the_database
+switched to db the_database
+the_database> show collections
+todos
+the_database> db.todos.insertOne({ "text": "Increase the number of tools in my tool belt", "done": false })
+{
+  acknowledged: true,
+  insertedId: ObjectId('667000537705b3e0668db5fb')
+}
+the_database> db.todos.find({})
+[
+  {
+    _id: ObjectId('666fdc05fa61c955488db5fb'),
+    text: 'Write code',
+    done: true
+  },
+  {
+    _id: ObjectId('666fdc05fa61c955488db5fc'),
+    text: 'Learn about containers',
+    done: false
+  },
+  {
+    _id: ObjectId('667000537705b3e0668db5fb'),
+    text: 'Increase the number of tools in my tool belt',
+    done: false
+  }
+]
+the_database> exit
+root@927471d044ac:/# exit
+exit

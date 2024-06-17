@@ -1,0 +1,9 @@
+exit
+db.todos.find({})
+db.todos.insertOne({ "text": "Increase the number of tools in my tool belt", "done": false })
+show collections
+use the_database
+show dbs
+exit
+show dbs
+mongosh -u root -p example
