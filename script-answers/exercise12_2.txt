@@ -1,0 +1,9 @@
+phatnguyen@Phats-MacBook-Pro part12-containers-applications % docker run -it ubuntu bash
+
+root@165803440c53:/# mkdir /usr/src/app
+root@165803440c53:/# cd /usr/src/app
+root@165803440c53:/usr/src/app# touch index.js
+root@165803440c53:/usr/src/app# ls
+index.js
+root@165803440c53:/usr/src/app# exit
+exit
